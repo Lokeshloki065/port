@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Lokesh M</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+  html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+    body {
+      background: linear-gradient(to right, #020404fa, #020404fa, #020404fa);
+      color: #fff;
+      cursor: url('fixed_cursor.png') 4 4, auto;}
+nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #121212;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+    .logo span {
+      color: #fff;
+    }
+    .logo span span {
+      color: #00c3ff;
+    }
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      padding-bottom: 4px;
+      transition: 0.3s;
+    }
+    .menu a:hover,
+    .menu a.active {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+
+    .container {
+      margin-top: 120px;
+      padding: 60px 50px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(0,195,255,0.03));
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.15);
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #e5ebed;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(247, 248, 248, 0.5);
+      margin-bottom: 60px;
+      animation: glow 5s infinite ease-in-out;
+    }
+
+    .about-section {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .profile-wrapper {
+      position: relative;
+      margin-top: -30px;
+    }
+
+   .profile-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 4px solid #00c3ff;
+  box-shadow: 0 0 100px rgba(13, 179, 229, 0.5);
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.6s ease-in-out;
+  animation: float 0s ease-in-out infinite, glowImg 10s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes glowImg {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(0, 195, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(0, 195, 255, 0.9);
+  }
+}
+
+
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+
+    .about-text {
+      max-width: 700px;
+      font-size: 1.15rem;
+      line-height: 2;
+      color: #ddd;
+      text-align: left;
+      padding-top: 10px;
+      animation: fadeUp 1s ease-out;
+      animation-delay: 0.3s;
+      animation-fill-mode: both;
+    }
+
+    .about-text span {
+      color: #19adc7;
+      font-weight: 600;
+    }
+
+    .home-btn, .arrow-btn {
+      position: fixed;
+      bottom: 20px;
+      padding: 15px;
+      font-size: 22px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      z-index: 1001;
+    }
+
+    .home-btn {
+      left: 20px;
+      background: #00c3ff;
+      color: white;
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.8);
+    }
+
+    .arrow-btn {
+      right: 20px;
+      background: #ff9800;
+      color: white;
+      box-shadow: 0 0 15px rgba(255, 152, 0, 0.8);
+    }
+
+    .home-btn:hover, .arrow-btn:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 10px #00c3ff; }
+      50% { text-shadow: 0 0 20px #00c3ff; }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .about-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .about-text {
+        text-align: center;
+      }
+
+      .profile-wrapper {
+        margin-top: 0;
+      }
+    }
+
+     @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 15px 20px;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+      }}
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .profile-img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .about-text {
+        font-size: 1rem;
+        padding-top: 20px;
+      }
+
+      .logo-img {
+        width: 60px;
+        height: 60px;
+      }
+    
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .about-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .profile-img {
+        width: 160px;
+        height: 160px;
+      }
+
+      .home-btn, .arrow-btn {
+        padding: 12px;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img">
+      <span>Lokesh<span>.M</span></span>
+    </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="qualification.html">Qualification</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="contac.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>About Me</h1>
+    <div class="about-section">
+      <div class="profile-wrapper">
+        <img src="me3.jpg" alt="Lokesh" class="profile-img" />
+      </div>
+      <div class="about-text">
+        I'm <span>Lokesh</span> from <span>Vellore</span>, an <span>enthusiastic and dedicated</span> 
+        <span>second-year B.Tech student</span> in 
+        <span>Artificial Intelligence & Data Science</span>. I have a strong foundation in 
+        <span>computer science</span> and a passion for <span>software and web development</span>. 
+        I am eager to apply my skills, work on <span>innovative projects</span>, and grow professionally in the field of technology. 
+        My aspiration is to become a <span>well-rounded software and web developer</span>.
+      </div>
+    </div>
+  </div>
+
+  <button class="home-btn" onclick="window.location.href='index.html'">🏠</button>
+  <button class="arrow-btn" onclick="window.location.href='skill.html'">➡</button>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const menuLinks = document.querySelectorAll(".menu a");
+    menuLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+  <script>
+  // Disable right-click
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  // Disable common shortcut keys for viewing source and developer tools
+  document.addEventListener("keydown", function (e) {
+    // F12
+    if (e.keyCode === 123) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+I or Ctrl+Shift+J
+    if ((e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74))) {
+      e.preventDefault();
+    }
+
+    // Ctrl+U
+    if (e.ctrlKey && e.keyCode === 85) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+C (Element picker)
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+      e.preventDefault();
+    }
+  });
+  </script>
+
+</body>
+</html>
+<html></html>

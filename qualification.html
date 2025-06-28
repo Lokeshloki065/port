@@ -1,0 +1,273 @@
+<!-- Your full HTML, only card wrappers updated -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qualifications | Lokesh M</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: white;
+      padding-top: 120px;
+    }
+
+    .menu a.active {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+
+      nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #121212;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+    .logo span {
+      color: #fff;
+    }
+    .logo span span {
+      color: #00c3ff;
+    }
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      padding-bottom: 4px;
+      transition: 0.3s;
+    }
+    .menu a:hover,
+    .menu a.active {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+    .qualification-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .qualification-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+
+    /* Delay each card */
+    .qualification-card:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .qualification-card:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .qualification-card:nth-child(3) {
+      animation-delay: 0.7s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+     @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 15px 20px;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+      }}
+
+    .qualification-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    }
+
+    .qualification-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 4px solid #00c3ff;
+    }
+
+    .qualification-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #00c3ff;
+    }
+
+    .qualification-card p {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin: 5px 0;
+    }
+
+    .home-btn, .arrow-btn {
+      position: fixed;
+      bottom: 20px;
+      padding: 15px;
+      font-size: 22px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .home-btn {
+      left: 20px;
+      background: #00c3ff;
+      color: white;
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.8);
+    }
+
+    .arrow-btn {
+      right: 20px;
+      background: #ff9800;
+      color: white;
+      box-shadow: 0 0 15px rgba(255, 152, 0, 0.8);
+    }
+
+    .home-btn:hover, .arrow-btn:hover {
+      transform: scale(1.1);
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+<div class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img">
+      <span>Lokesh<span>.M</span></span>
+    </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="qualification.html">Qualification</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="contac.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="qualification-container">
+    <a href="https://svhec.com" target="_blank" style="text-decoration: none;">
+      <div class="qualification-card">
+        <img src="image/svhec.png" alt="SVHEC">
+        <h3>B.Tech in AI & Data Science</h3>
+        <p>Institution: Shree Venkateshwara Hi-Tech Engineering College, Gobi</p>
+        <p>Year: 2023 - 2027</p>
+      </div>
+    </a>
+
+    <a href="https://www.ssvmhss.com/" target="_blank" style="text-decoration: none;">
+      <div class="qualification-card">
+        <img src="image/ssvms.JPG" alt="SSLC">
+        <h3>HSE (12th Grade)</h3>
+        <p>Institution: Sri Saraswathi Matric School, Vellore</p>
+        <p>Year: 2022 - 2023</p>
+      </div>
+    </a>
+
+    <a href="https://www.ssvmhss.com/" target="_blank" style="text-decoration: none;">
+      <div class="qualification-card">
+        <img src="image/ssvms.JPG" alt="HSE">
+        <h3>SSLC (10th Grade)</h3>
+        <p>Institution: Sri Saraswathi Matric School, Vellore</p>
+        <p>Year: 2020 - 2021</p>
+      </div>
+    </a>
+  </div>
+
+  <button class="home-btn" onclick="window.location.href='skill.html'">⬅</button>
+  <button class="arrow-btn" onclick="window.location.href='projects.html'">➡</button>
+  
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const menuLinks = document.querySelectorAll(".menu a");
+
+    menuLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+  <script>
+  // Disable right-click
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  // Disable common shortcut keys for viewing source and developer tools
+  document.addEventListener("keydown", function (e) {
+    // F12
+    if (e.keyCode === 123) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+I or Ctrl+Shift+J
+    if ((e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74))) {
+      e.preventDefault();
+    }
+
+    // Ctrl+U
+    if (e.ctrlKey && e.keyCode === 85) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+C (Element picker)
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+      e.preventDefault();
+    }
+  });
+  </script>
+</body>
+</html>

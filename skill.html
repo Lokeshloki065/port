@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Lokesh M</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+  padding-top: 100px; 
+}
+
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+      background-color: #000;
+      color: white;
+    }
+
+     nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #121212;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+    .logo span {
+      color: #fff;
+    }
+    .logo span span {
+      color: #00c3ff;
+    }
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      padding-bottom: 4px;
+      transition: 0.3s;
+    }
+    .menu a:hover,
+    .menu a.active {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+    .container {
+  margin-top: 100px;
+  padding: 30px 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-content: center;
+  justify-content: center;
+}
+
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 180px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s forwards;
+      text-decoration: none;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    }
+
+   .skill-card i {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: #00c3ff; /* Plain blue */
+  text-shadow: none; /* Remove glow */
+}
+
+
+    .skill-card h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, #41ecff, #41ecff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .skill-card:nth-child(1) { animation-delay: 0.2s; }
+    .skill-card:nth-child(2) { animation-delay: 0.4s; }
+    .skill-card:nth-child(3) { animation-delay: 0.6s; }
+    .skill-card:nth-child(4) { animation-delay: 0.8s; }
+    .skill-card:nth-child(5) { animation-delay: 1s; }
+    .skill-card:nth-child(6) { animation-delay: 1.2s; }
+
+    .home-btn, .arrow-btn {
+      position: fixed;
+      bottom: 20px;
+      padding: 15px;
+      font-size: 22px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      z-index: 999;
+    }
+
+    .home-btn {
+      left: 20px;
+      background: #00c3ff;
+      color: white;
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.8);
+    }
+
+    .arrow-btn {
+      right: 20px;
+      background: #ff9800;
+      color: white;
+      box-shadow: 0 0 15px rgba(255, 152, 0, 0.8);
+    }
+
+    .home-btn:hover, .arrow-btn:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+      }
+       @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 15px 20px;
+      }}
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .skill-card i {
+        font-size: 2.8rem;
+      }
+
+      .skill-card h3 {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img">
+      <span>Lokesh<span>.M</span></span>
+    </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="qualification.html">Qualification</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="contac.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <a href="https://html.com" target="_blank" class="skill-card">
+      <i class="fab fa-html5"></i>
+      <h3>HTML</h3>
+    </a>
+    <a href="https://css-tricks.com" target="_blank" class="skill-card">
+      <i class="fab fa-css3-alt"></i>
+      <h3>CSS</h3>
+    </a>
+    <a href="https://www.oracle.com/java/" target="_blank" class="skill-card">
+      <i class="fab fa-java"></i>
+      <h3>Java</h3>
+    </a>
+    <a href="https://www.python.org" target="_blank" class="skill-card">
+      <i class="fab fa-python"></i>
+      <h3>Python</h3>
+    </a>
+    <a href="https://www.mysql.com" target="_blank" class="skill-card">
+      <i class="fas fa-database"></i>
+      <h3>MySQL</h3>
+    </a>
+    <a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank" class="skill-card">
+      <i class="fas fa-code"></i>
+      <h3>C Language</h3>
+    </a>
+</div>g @
+
+  <button class="home-btn" onclick="navigateToAbout()">⬅</button>
+  <button class="arrow-btn" onclick="navigateToQualifications()">➡</button>
+
+  <script>
+    function navigateToAbout() {
+      window.location.href = 'about.html';
+    }
+
+    function navigateToQualifications() {
+      window.location.href = 'qualification.html';
+    }
+
+    const currentPage = window.location.pathname.split("/").pop();
+    const menuLinks = document.querySelectorAll(".menu a");
+    menuLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+  <script>
+  // Disable right-click
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  // Disable common shortcut keys for viewing source and developer tools
+  document.addEventListener("keydown", function (e) {
+    // F12
+    if (e.keyCode === 123) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+I or Ctrl+Shift+J
+    if ((e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74))) {
+      e.preventDefault();
+    }
+
+    // Ctrl+U
+    if (e.ctrlKey && e.keyCode === 85) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+C (Element picker)
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+      e.preventDefault();
+    }
+  });
+  </script>
+
+</body>
+</html>

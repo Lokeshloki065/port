@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Lokesh M</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100vh;
+      background-color: #020404fa;
+      color: white;
+      overflow: hidden;
+    }
+
+      nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #121212;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+    .logo span {
+      color: #fff;
+    }
+    .logo span span {
+      color: #00c3ff;
+    }
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      padding-bottom: 4px;
+      transition: 0.3s;
+    }
+    .menu a:hover,
+    .menu a.active {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+
+    .contact-section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 90px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .contact-container {
+      background: rgba(227, 221, 221, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 0 25px #329bdd;
+      border: 1px solid #329bdd;
+      max-width: 480px;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .contact-container h2 {
+      font-size: 32px;
+      font-weight: bold;
+      color: #329bdd;
+      margin-bottom: 30px;
+      text-align: center;
+      border-bottom: 3px solid #329bdd;
+      display: inline-block;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 14px 18px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      background: #1a1a1a;
+      color: white;
+    }
+
+    .contact-form button {
+      background: linear-gradient(to right, #329bdd, #329bdd);
+      color: white;
+      font-weight: bold;
+      padding: 14px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      transform: scale(1.03);
+    }
+
+    .social-icons {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      font-size: 36px;
+      z-index: 1;
+    }
+
+    .social-icons.left {
+      left: 150px;
+    }
+
+    .social-icons.right {
+      right: 150px;
+    }
+
+    .social-icons a {
+      color: #329bdd;
+      transition: 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #ffffff;
+      transform: scale(1.2);
+    }
+
+    @media screen and (max-width: 768px) {
+      .social-icons {
+        display: none;
+      }}
+       @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 15px 20px;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+      }
+    }
+
+    .home-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #00c3ff;
+      color: white;
+      padding: 15px;
+      font-size: 22px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.8);
+      transition: transform 0.3s;
+      z-index: 1001;
+    }
+
+    .home-btn:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Menu -->
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img">
+      <span>Lokesh<span>.M</span></span>
+    </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="qualification.html">Qualification</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <!-- Left Social Icons -->
+    <div class="social-icons left">
+      <a href="https://www.linkedin.com/in/lokesh-m-265b832b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:imlokesh152005@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/918072894184" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Contact Container -->
+    <div class="contact-container">
+      <h2>Contact</h2>
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/xkgryqgb" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Right Social Icons -->
+    <div class="social-icons right">
+      <a href="https://github.com/lokeshloki65" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://instagram.com/lovely_loki._65" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/+919655865777"><i class="fas fa-paper-plane"></i></a>
+    </div>
+  </section>
+
+  <!-- Home Button -->
+  <button class="home-btn" onclick="window.location.href='index.html'">🏠</button>
+
+  <!-- Form Submission Script -->
+  <script>
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        alert("✅ Thank you! Your message has been sent.");
+        form.reset();
+      } else {
+        alert("❌ Something went wrong. Please try again later.");
+      }
+    });
+  </script>
+  <script>
+  // Disable right-click
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  // Disable common shortcut keys for viewing source and developer tools
+  document.addEventListener("keydown", function (e) {
+    // F12
+    if (e.keyCode === 123) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+I or Ctrl+Shift+J
+    if ((e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74))) {
+      e.preventDefault();
+    }
+
+    // Ctrl+U
+    if (e.ctrlKey && e.keyCode === 85) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+C (Element picker)
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+      e.preventDefault();
+    }
+  });
+  </script>
+</body>
+</html>

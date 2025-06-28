@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certifications | Lokesh M</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: #000;
+      color: white;
+      padding-top: 100px;
+      padding-bottom: 80px;
+      display: flex;
+      flex-direction: column;
+      animation: pageFadeIn 0.8s ease-in;
+    }
+
+   nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #121212;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+    .logo span {
+      color: #fff;
+    }
+    .logo span span {
+      color: #00c3ff;
+    }
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      padding-bottom: 4px;
+      transition: 0.3s;
+    }
+    .menu a:hover,
+    .menu a.active {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 10px 0 30px;
+      color: #00c3ff;
+      font-size: 2rem;
+      text-shadow: 0 0 10px rgba(0,195,255,0.4);
+    }
+
+   .cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 50px;
+  flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+    @media (max-width: 768px) {
+      .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+     @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        padding: 15px 20px;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 10px;
+      }}
+
+    .cert-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 195, 255, 0.2);
+      border: 2px solid rgba(0, 195, 255, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      height: 190px;
+      overflow: hidden;
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.6);
+    }
+
+    .cert-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 18px 18px 0 0;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .cert-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .cert-info {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .cert-info h3 {
+      color: #00c3ff;
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .cert-info p {
+      margin-top: 5px;
+      font-size: 0.8rem;
+      color: #ccc;
+    }
+
+    .home-btn, .arrow-btn {
+      position: fixed;
+      bottom: 20px;
+      padding: 15px;
+      font-size: 22px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 1001;
+    }
+
+    .home-btn {
+      left: 20px;
+      background: #00c3ff;
+      color: white;
+      box-shadow: 0 0 15px rgba(0,195,255,0.8);
+    }
+
+    .arrow-btn {
+      right: 20px;
+      background: #ff9800;
+      color: white;
+      box-shadow: 0 0 15px rgba(255,152,0,0.8);
+    }
+
+    .home-btn:hover, .arrow-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 2000;
+      backdrop-filter: blur(5px);
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+      animation: zoomIn 0.5s ease-in-out;
+      transform-origin: center;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .lightbox .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      padding: 20px;
+      user-select: none;
+    }
+
+    .lightbox .prev { left: 10px; }
+    .lightbox .next { right: 10px; }
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 4rem;
+      color: red;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.4) rotateY(90deg); opacity: 0; }
+      100% { transform: scale(1) rotateY(0); opacity: 1; }
+    }
+
+    @keyframes rotateZoom {
+      0% { transform: scale(0.5) rotateY(90deg); opacity: 0; }
+      100% { transform: scale(1) rotateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img">
+      <span>Lokesh<span>.M</span></span>
+    </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="qualification.html">Qualification</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html" class="active">Certifications</a>
+      <a href="contac.html">Contact</a>
+    </div>
+  </nav>
+
+  <h1>🎓 My Certifications 🎖️</h1>
+
+  <div class="cert-grid">
+    <div class="cert-card">
+      <img src="oracle_cert.jpg" alt="Oracle Certification" onclick="openLightbox(0)" loading="lazy"/>
+      <div class="cert-info">
+        <h3>Oracle APEX Cloud Developer</h3>
+        <p>Oracle University - May 2025</p>
+      </div>
+    </div>
+    <div class="cert-card">
+      <img src="certifications_kongu .jpg" alt="Gen-AI with Cloud" onclick="openLightbox(1)" loading="lazy"/>
+      <div class="cert-info">
+        <h3>Gen-AI with Cloud</h3>
+        <p>Kongu Engineering College - Oct 2024</p>
+      </div>
+    </div>
+    <div class="cert-card">
+      <img src="certifications 33 blg.jpg" alt="Hackathon" onclick="openLightbox(2)" loading="lazy"/>
+      <div class="cert-info">
+        <h3>National Hackathon</h3>
+        <p>Shridevi Institute - Oct 2024</p>
+      </div>
+    </div>
+    <div class="cert-card">
+      <img src="certfications 22.jpg" alt="IoT" onclick="openLightbox(3)" loading="lazy"/>
+      <div class="cert-info">
+        <h3>IoT Workshop</h3>
+        <p>Kongu Engineering College - Feb 2025</p>
+      </div>
+    </div>
+    <div class="cert-card">
+      <img src="certfication kongu hackathon.jpg" alt="AI Workshop" onclick="openLightbox(4)" loading="lazy"/>
+      <div class="cert-info">
+        <h3>Hackathon</h3>
+        <p>Kongu Engineering College - Mar 2025</p>
+      </div>
+    </div>
+    <div class="cert-card">
+      <img src="Whats certfi.jpg" alt="Web Dev" onclick="openLightbox(5)" loading="lazy"/>
+      <div class="cert-info">
+        <h3>National Technical Symposium</h3>
+        <p>ERODE SENGUNTHAR - April 2024</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">×</span>
+    <span class="nav-btn prev" onclick="changeSlide(-1)">&#10094;</span>
+    <img id="lightboxImage" src="" alt="Certificate Preview" />
+    <span class="nav-btn next" onclick="changeSlide(1)">&#10095;</span>
+  </div>
+
+  <button class="home-btn" onclick="window.location.href='projects.html'">⬅</button>
+  <button class="arrow-btn" onclick="window.location.href='contac.html'">➡</button>
+
+  <script>
+    const certImages = [
+      "oracle_cert.jpg",
+      "certifications_kongu .jpg",
+      "certifications 33 blg.jpg",
+      "certfications 22.jpg",
+      "certfication kongu hackathon.jpg",
+      "Whats certfi.jpg"
+    ];
+
+    let currentImageIndex = 0;
+
+    function openLightbox(index) {
+      currentImageIndex = index;
+      document.getElementById("lightbox").style.display = "flex";
+      document.getElementById("lightboxImage").src = certImages[currentImageIndex];
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    function changeSlide(direction) {
+      const lightboxImage = document.getElementById("lightboxImage");
+
+      lightboxImage.style.animation = "none";
+      void lightboxImage.offsetWidth; // reflow
+      lightboxImage.style.animation = "rotateZoom 0.6s ease-in-out";
+
+      currentImageIndex = (currentImageIndex + direction + certImages.length) % certImages.length;
+      setTimeout(() => {
+        lightboxImage.src = certImages[currentImageIndex];
+      }, 200);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.cert-card').forEach((card, i) => {
+        card.style.animationDelay = `${i * 0.2}s`;
+      });
+
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".menu a").forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+
+        
+      });
+    });
+  </script>
+  <script>
+  let touchStartX = 0;
+
+  document.getElementById("lightbox").addEventListener("touchstart", e => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  document.getElementById("lightbox").addEventListener("touchend", e => {
+    const touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 50) changeSlide(1);  // Swipe left
+    if (touchEndX - touchStartX > 50) changeSlide(-1); // Swipe right
+  });
+</script>
+  <script>
+  // Disable right-click
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  // Disable common shortcut keys for viewing source and developer tools
+  document.addEventListener("keydown", function (e) {
+    // F12
+    if (e.keyCode === 123) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+I or Ctrl+Shift+J
+    if ((e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74))) {
+      e.preventDefault();
+    }
+
+    // Ctrl+U
+    if (e.ctrlKey && e.keyCode === 85) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+C (Element picker)
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+      e.preventDefault();
+    }
+  });
+  </script>
+
+</body>
+</html>

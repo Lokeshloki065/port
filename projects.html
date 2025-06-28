@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Lokesh M</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+  html, body {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.project-section {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px 40px;
+  justify-content: center;
+  align-items: flex-start;
+  /* Remove overflow: hidden or use: */
+  overflow-y: auto;
+}
+
+
+    body {
+  background-color: #000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+}
+     nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #121212;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+    .logo span {
+      color: #fff;
+    }
+    .logo span span {
+      color: #00c3ff;
+    }
+    .menu {
+      display: flex;
+      gap: 25px;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      padding-bottom: 4px;
+      transition: 0.3s;
+    }
+    .menu a:hover,
+    .menu a.active {
+      color: #00c3ff;
+      border-bottom: 2px solid #00c3ff;
+    }
+    
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInCard 0.8s ease forwards;
+      width: 350px;
+    }
+
+    .project-card:nth-child(1) { animation-delay: 0.2s; }
+    .project-card:nth-child(2) { animation-delay: 0.4s; }
+    .project-card:nth-child(3) { animation-delay: 0.6s; }
+    .project-card:nth-child(4) { animation-delay: 0.8s; }
+    .project-card:nth-child(5) { animation-delay: 1s; }
+    .project-card:nth-child(6) { animation-delay: 1.2s; }
+
+    @keyframes fadeInCard {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.5);
+    }
+
+    .project-card h3 {
+      color: #00c3ff;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 1.2rem;
+    }
+
+    .project-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #00c3ff;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .project-card a:hover {
+      background: #03a9f4;
+      transform: scale(1.05);
+    }
+
+    .home-btn, .arrow-btn {
+      position: fixed;
+      bottom: 20px;
+      padding: 15px;
+      font-size: 22px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      z-index: 1001;
+    }
+
+    .home-btn {
+      left: 20px;
+      background: #00c3ff;
+      color: white;
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.8);
+    }
+
+    .arrow-btn {
+      right: 20px;
+      background: #ff9800;
+      color: white;
+      box-shadow: 0 0 15px rgba(255, 152, 0, 0.8);
+    }
+
+    .home-btn:hover, .arrow-btn:hover {
+      transform: scale(1.1);
+    }
+
+     
+    @media (max-width: 768px) {
+  body {
+    padding-top: 140px; 
+  }
+   nav {
+        flex-direction: column;
+        padding: 15px 20px;
+   }
+
+     .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }}
+
+  </style>
+</head>
+<body>
+  <nav>
+<div class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img">
+      <span>Lokesh<span>.M</span></span>
+    </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="qualification.html">Qualification</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="contac.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="project-section">
+    <div class="project-card">
+      <h3><i class="fas fa-cloud-sun"></i>Weather Analysis</h3>
+      <p>Real-time weather and climate data analysis using APIs and visualization tools.</p>
+      <a href="https://weather-analysis-6.onrender.com/" target="_blank">View</a>
+    </div>
+
+    <div class="project-card">
+      <h3><i class="fas fa-robot"></i>Chatbot</h3>
+      <p>Smart multilingual chatbot integrated with Farm2Bag.com for order and product support.</p>
+      <a href="https://chatbot-1-uzj5.onrender.com/" target="_blank">View</a>
+    </div>
+
+    <div class="project-card">
+      <h3><i class="fas fa-comments"></i>Chat Application</h3>
+      <p>WhatsApp-like Java chat app with real-time messaging and voice messaging.</p>
+      <a href="https://github.com/lokeshloki65/chatapplication" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3><i class="fas fa-eye"></i>Exam Face Recognition</h3>
+      <p>A robust AI-based proctoring system using facial recognition to verify and monitor candidates during exams.</p>
+      <a href="https://github.com/lokeshloki65/exam-face-recognition" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3><i class="fas fa-robot"></i>Ai-meme_generator</h3>
+      <p>AI Meme Generator is a smart tool that creates hilarious memes by combining AI-generated captions.</p>
+      <a href="https://github.com/lokeshloki65/Ai-meme_generator" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3><i class="fas fa-eye"></i>Face-Attendance-System</h3>
+      <p>Face Recognition Attendance System by identifying faces using real-time facial recognition technology.</p>
+      <a href="https://github.com/lokeshloki65/Face-Recognition-Attendance-System" target="_blank">View Project</a>
+    </div>
+  </div>
+
+  <button class="home-btn" onclick="window.location.href='qualification.html'">⬅</button>
+  <button class="arrow-btn" onclick="window.location.href='certifications.html'">➡</button>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+    const menuLinks = document.querySelectorAll(".menu a");
+    menuLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+  <script>
+  // Disable right-click
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  // Disable common shortcut keys for viewing source and developer tools
+  document.addEventListener("keydown", function (e) {
+    // F12
+    if (e.keyCode === 123) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+I or Ctrl+Shift+J
+    if ((e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74))) {
+      e.preventDefault();
+    }
+
+    // Ctrl+U
+    if (e.ctrlKey && e.keyCode === 85) {
+      e.preventDefault();
+    }
+
+    // Ctrl+Shift+C (Element picker)
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+      e.preventDefault();
+    }
+  });
+  </script>
+</body>
+</html>
